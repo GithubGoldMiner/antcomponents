@@ -1,4 +1,5 @@
 import react, { Component } from 'react';
+import { Row, Col } from 'antd';
 import PropTypes from 'prop-types'
 import Async from 'react-select/lib/Async';
 const debounce = require('lodash/debounce');
@@ -26,6 +27,10 @@ export default class AsyncAutoComplete extends Component {
          * This attribute is used to determine whether the selection should be autofocused.
          **/
         isAutoFocus: PropTypes.bool,
+        /** 
+         * This attribute is used to show the label, if it's empty, then display no label.
+         **/
+        label: PropTypes.string,
       }
 
     handleOnChange = (value) => {
@@ -39,12 +44,22 @@ export default class AsyncAutoComplete extends Component {
     }, 750)
 
     render() {
+        const hasLabel = this.props.label ? true : false;
         return (
-            <Async
-                autoFocus={this.props.isAutoFocus}
-                loadOptions={this.handleFetchOptions}
-                onChange={this.handleOnChange}
-            />
+            <Row type="flex" style={{ alignItems: 'center' }}>
+                {
+                    hasLabel
+                    ? <Col style={{ textAlign: 'right', paddingRight: 24 }} span={3}><span style={{ fontWeight: 'bold' }}>{this.props.label}</span></Col>
+                    : null
+                }
+                <Col span={hasLabel? 21 : 24}>
+                    <Async
+                        autoFocus={this.props.isAutoFocus}
+                        loadOptions={this.handleFetchOptions}
+                        onChange={this.handleOnChange}
+                    />
+                </Col>
+            </Row>
         );
     }
 }

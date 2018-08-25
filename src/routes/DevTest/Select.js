@@ -26,6 +26,7 @@ export default class Select extends Component{
         return (
             <div>
                 <AsyncAutoComplete
+                    label="Test"
                     asyncRawOptionLoad={this.asyncRawOptionLoad}
                     asyncRawOptionProcess={this.asyncRawOptionProcess}
                     onSelectChange={this.handleOnSelectChange}
