@@ -1,9 +1,9 @@
 import react, { Component } from 'react';
-import { Form, Button } from 'antd';
+import { Input, Form, Button } from 'antd';
 import InputField from '../../components/Inputs/InputField';
 import DateField from '../../components/Inputs/DateField';
 import TextAreaField from '../../components/Inputs/TextAreaField';
-
+import ForecastInput from '../../components/Inputs/ForecastInput';
 class FormTest extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
@@ -50,6 +50,39 @@ class FormTest extends Component {
                     wrapperCol={20}
                     label="Description"
                 />
+                <TextAreaField
+                    {...this.props.form}
+                    fieldName="Description"
+                    placeholder="Please Input Description for yourself"
+                    labelCol={4}
+                    wrapperCol={20}
+                    label="Description"
+                />
+                    <ForecastInput
+                        {...this.props.form}
+                        wrapperCol={8}
+                        fieldName="18Aug"
+                        placeholder="2018Aug"
+                        label="2018 Aug"
+                        allocation={100}
+                    />
+                    <ForecastInput
+                        {...this.props.form}
+                        wrapperCol={8}
+                        fieldName="18Sep"
+                        placeholder="2018Sep"
+                        label="2018 Sep"
+                        allocation={100}
+                    />
+                    <ForecastInput
+                        {...this.props.form}
+                        wrapperCol={8}
+                        fieldName="18Oct"
+                        placeholder="2018Oct"
+                        label="2018 Oct "
+                        allocation={100}
+                    />
+
                 <Button
                     type="primary"
                     htmlType="submit"
