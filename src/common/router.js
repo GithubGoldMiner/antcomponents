@@ -97,6 +97,9 @@ export const getRouterData = app => {
     '/devtest/select': {
       component: dynamicWrapper(app, [], () => import('../routes/DevTest/Select')),
     },
+    '/devtest/form': {
+      component: dynamicWrapper(app, [], () => import('../routes/DevTest/Form')),
+    },
     '/dashboard/analysis': {
       component: dynamicWrapper(app, ['chart'], () => import('../routes/Dashboard/Analysis')),
     },

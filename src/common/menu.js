@@ -163,6 +163,10 @@ const menuData = [
         name: 'Select',
         path: 'select',
       },
+      {
+        name: 'Form',
+        path: 'form',
+      }
     ]
   }
 ];
