@@ -16,7 +16,7 @@ export default class InputField extends Component {
                 {getFieldDecorator(this.props.fieldName, {
                     rules: this.props.rules? this.props.rules: [],
                 })(
-                    <Input placeholder={this.props.placeholder}/>
+                    <Input.TextArea placeholder={this.props.placeholder} autosize={{minRows: 3, maxRows: 6}}/>
                 )}
             </Form.Item>
         )

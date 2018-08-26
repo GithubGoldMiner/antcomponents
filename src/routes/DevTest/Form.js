@@ -2,8 +2,7 @@ import react, { Component } from 'react';
 import { Form, Button } from 'antd';
 import InputField from '../../components/Inputs/InputField';
 import DateField from '../../components/Inputs/DateField';
-
-
+import TextAreaField from '../../components/Inputs/TextAreaField';
 
 class FormTest extends Component {
     handleSubmit = (e) => {
@@ -42,6 +41,14 @@ class FormTest extends Component {
                     labelCol={4}
                     wrapperCol={20}
                     label="Start Date"
+                />
+                <TextAreaField
+                    {...this.props.form}
+                    fieldName="Description"
+                    placeholder="Please Input Description for yourself"
+                    labelCol={4}
+                    wrapperCol={20}
+                    label="Description"
                 />
                 <Button
                     type="primary"
