@@ -1,5 +1,6 @@
 import react, { Component } from 'react';
-import { Input, Form, Button } from 'antd';
+import { Input, Form, Button, message } from 'antd';
+
 import InputField from '../../components/Inputs/InputField';
 import DateField from '../../components/Inputs/DateField';
 import TextAreaField from '../../components/Inputs/TextAreaField';
@@ -9,6 +10,7 @@ class FormTest extends Component {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
+                message.success('Your Form has been submitted successfully');
                 console.log('Received values of form: ', values);
             }
         });
