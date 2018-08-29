@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, DatePicker } from 'antd';
 import PropTypes from 'prop-types'
 
-export default class InputField extends Component {
+export default class DateField extends Component {
     static propTypes = {
         /** 
          * This attribute is used to determine when the form is submitted, the key within that `values` object
