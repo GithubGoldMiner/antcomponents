@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, Input } from 'antd';
 import PropTypes from 'prop-types'
 
-export default class InputField extends Component {
+export default class TextAreaField extends Component {
     static propTypes = {
         /** 
          * This attribute is used to determine when the form is submitted, the key within that `values` object
